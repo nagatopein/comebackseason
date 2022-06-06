@@ -1,26 +1,24 @@
 var tasks = [];
+var taskIdCounter = 0;
+
+var currentTime = moment().format("dddd, MMMM Do YYYY, h: mm a");
+$("#currentDay").html(currentTime);
 
 // save tasks to local storage
 var saveTasks = function () {
-    localStorage.setItem("tasks", JSON.stringify(tasks))
+    $(".saveBtn").on("click", function () {
+        // create array to save tasks
+        var newTasks = {
+            time: $(this).parent.attr("id"),
+            name: $(this).siblings("description").val()
+        };
+
+        task.push(saveTasks);
+        localStorage.setItem("tasks", JSON.stringify(tasks))
+    })
+
 }
 
-// edit tasks
-$("#list1").on("click", function () {
-    var text = $(this).text().trim();
-    console.log(text);
-
-    var textInput = $("<textarea>").addClass("h-100").val(text);
-
-    $(this).replaceWith(textInput);
-
-    textInput.trigger("focus");
-});
-
-$("#save1").on("click", function () {
-    saveTasks();
-    console.log("task saved");
-})
 
 
 
@@ -29,46 +27,58 @@ $("#save1").on("click", function () {
 
 
 
-
-
-
-
-
-
-
-//create tasks
-// var createTask = function (taskText, taskList) {
-//     var taskLi = $("<li>").addClass("list-item");
-//     var taskP = $("p").addClass("m-1").text(taskText);
-
-//     taskLi.append(taskP);
-
-//     $("#list1" + taskList).append(taskLi);
-
+// var taskEl = document.querySelector(textarea);
+// document.addEventListener('change', taskEl); {
+//     console.log(this);
 // };
 
-// var loadTasks = function () {
-//     tasks = JSON.parse(localStorage.getItem("tasks"));
 
-//     // if nothing in localStorage, create a new object to track all task status arrays
-//     // if (!tasks) {
-//     //   tasks = {
-//     //     toDo: [],
-//     //     inProgress: [],
-//     //     inReview: [],
-//     //     done: []
-//     //   };
-//     // }
 
-//     // loop over object properties
-//     $.each(tasks, function (list, arr) {
-//         console.log(list, arr);
-//         // then loop over sub-array
-//         arr.forEach(function (task) {
-//             createTask(task.text, task.date, list);
-//         });
-//     });
-// };
+// // edit tasks
+// $(".time-block").on("click", function () {
+//     // event.preventDefault();
+//     var text = $(this).text().trim();
+//     console.log(this), text;
+
+//     var textInput = $("<textarea>").attr("taskId", taskIdCounter).addClass("h-100").val(text);
+//     console.log(textInput);
+
+//     $(this).replaceWith(textInput);
+//     textInput.trigger("focus");
+
+//     //save tasks
+//     $(".saveBtn").on("click", function () {
+//         tasks.push(textInput);
+//         saveTasks(textInput);
+//         console.log("task saved");
+//     })
+
+//     taskIdCounter++
+// });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -1,0 +1,27 @@
+.saveBtn {
+    border-left: 1px solid black;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    background-color: #06AED5;
+    color: white;
+}
+
+.row {
+    white-space: normal;
+}
+
+.col {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.col-8 {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+textarea {
+    border: none;
+    background-color: transparent;
+    resize: none;
+}
